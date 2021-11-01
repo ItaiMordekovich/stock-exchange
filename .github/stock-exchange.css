@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#ulResults {
+  margin-top: 10px;
+}
+
+.liResults {
+  width: 500px;
+  padding: 15px 0px 15px 0px;
+  margin-left: 15px;
+  border-bottom: 2px solid rgb(161, 161, 172); ;
+}
