@@ -21,12 +21,14 @@ document.getElementById("searchButton").addEventListener("click", function () {
                 
                 const companyName = data[i].name;
                 const companySymbol = data[i].symbol;
+               
 
                 document.getElementById("ulResults")
                 const liResults = document.createElement("li");
                 const companyLink = document.createElement("a");
-                companyLink.href = `/company.html?symbol=${companySymbol}` 
-                companyLink.innerHTML = `${companyName} (${companySymbol})`
+                companyLink.target ="blank";
+                companyLink.innerHTML = `${companyName} (${companySymbol})` 
+                companyLink.href = `./company.html?symbol=${companySymbol}` 
                 liResults.appendChild(companyLink)
                 document.getElementById("ulResults").append(liResults)
                 liResults.classList.add("liResults");

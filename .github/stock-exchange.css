@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+#searchInput {
+  width: 400px;
+}
+
 #ulResults {
   margin-top: 10px;
 }
