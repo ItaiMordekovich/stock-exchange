@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 
-#searchInput {
-  width: 500px;
-}
+/* #searchInput {
+  width: 100px;
+} */
 
 #ulResults {
   margin-top: 10px;
@@ -38,7 +38,43 @@
   font-size: 12px;
 }
 
+.greenPercentage {
+  color: rgb(18, 163, 5); 
+}
+
 /* .companyName {
 font-size: 80px;
 color: crimson;
 } */
+
+/* ====================================== Milestone 4 ====================================== */
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 25px;
+  width: 100%;
+}
+
+.wrapper p {
+  position: relative;
+  margin: 0;
+  line-height: 25px;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  100% { transform: translate(-100%, 0); }
+}
+
+.marqueeCompanyPrice {
+    color: rgb(18, 163, 5); 
+    padding-left:2px;
+}
+
+.marqueeCompanySymbol {
+  padding-left:10px;
+}
+
+
