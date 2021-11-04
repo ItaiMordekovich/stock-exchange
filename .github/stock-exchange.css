@@ -5,16 +5,40 @@
 }
 
 #searchInput {
-  width: 400px;
+  width: 500px;
 }
 
 #ulResults {
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .liResults {
-  width: 500px;
+  width: 600px;
   padding: 15px 0px 15px 0px;
   margin-left: 15px;
-  border-bottom: 2px solid rgb(161, 161, 172); ;
+  border-bottom: 2px solid rgb(161, 161, 172);
 }
+
+.compImg {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.liSymbol {
+  margin-left: 20px;
+  color: rgb(156, 156, 156);
+  font-size: 12px;
+}
+
+.liPercentage {
+  font-size: 12px;
+}
+
+/* .companyName {
+font-size: 80px;
+color: crimson;
+} */

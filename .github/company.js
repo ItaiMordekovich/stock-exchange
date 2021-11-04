@@ -62,6 +62,8 @@ fetch(companyHistory_URL)
             dateStockPrice.push(data.historical[i].date);
         }
 
+        let dateReversed = dateStockPrice.reverse();
+
         function stockPriceHistoryChart(){
             document.getElementById("spinnerChart").classList.add("d-none");
 
@@ -69,7 +71,7 @@ fetch(companyHistory_URL)
             const myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: dateStockPrice,
+                    labels: dateReversed,
                     datasets: [{
                         label: 'Stock Price History',
                         data: closeStockPrice,
