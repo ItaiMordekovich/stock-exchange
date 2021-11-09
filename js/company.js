@@ -1,5 +1,5 @@
 
-//====================================== Milestone 2 ======================================
+
 
 const urlParams = new URLSearchParams(window.location.search);
 const symbolString = urlParams.get('symbol');
@@ -8,13 +8,13 @@ const company_URL = `https://stock-exchange-dot-full-stack-course-services.ew.r.
 
 fetch(company_URL)
     .then(function (response) {
-        //console.log(response);
+     
         return response.json();
     })
 
     .then(data => {
-        //console.log(data);
-
+       
+        const dataProfile = data.profile;
         const companyImage = data.profile.image;
         const companyName = data.profile.companyName;
         const companyIndustry = data.profile.industry;
@@ -22,6 +22,7 @@ fetch(company_URL)
         const companyPrice = data.profile.price;
         const companyChangesPercentage = data.profile.changesPercentage;
         const companyWebsite = data.profile.website;
+        const companyPercentage = document.getElementById("percentage");
 
 
         document.getElementById("logo").src = companyImage;
@@ -29,15 +30,15 @@ fetch(company_URL)
         document.getElementById("industry").innerHTML = `(${companyIndustry})`;
         document.getElementById("description").innerHTML = companyDescription;
         document.getElementById("stockPrice").innerHTML = `Stock Price: $${companyPrice}`;
-        document.getElementById("percentage").innerHTML = `(${companyChangesPercentage}%)`;
+        companyPercentage.innerHTML = `(${companyChangesPercentage}%)`;
         document.getElementById("website").innerHTML = companyWebsite;
 
         function changePercentage() {
             if (companyChangesPercentage < 0) {
-                document.getElementById("percentage").classList.add("text-danger");
+                companyPercentage.classList.add("text-danger");
             } else {
-                document.getElementById("percentage").classList.add("text-success");
-                document.getElementById("percentage").innerHTML = `(+${companyChangesPercentage}%)`;
+                companyPercentage.classList.add("text-success");
+                companyPercentage.innerHTML = `(+${companyChangesPercentage}%)`;
             }
         }
         changePercentage();
@@ -47,8 +48,8 @@ fetch(company_URL)
 
 const companyHistory_URL = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/historical-price-full/${symbolString}?serietype=line`
 
-let closeStockPrice = [];
-let dateStockPrice = [];
+const closeStockPrice = [];
+const dateStockPrice = [];
 
 fetch(companyHistory_URL)
     .then(function (response) {
@@ -62,7 +63,7 @@ fetch(companyHistory_URL)
             dateStockPrice.push(data.historical[i].date);
         }
 
-        let dateReversed = dateStockPrice.reverse();
+        const dateReversed = dateStockPrice.reverse();
 
         function stockPriceHistoryChart(){
             document.getElementById("spinnerChart").classList.add("d-none");

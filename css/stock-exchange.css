@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-/* #searchInput {
-  width: 100px;
-} */
-
 #ulResults {
   margin-top: 10px;
   display: flex;
@@ -42,13 +38,6 @@
   color: rgb(18, 163, 5); 
 }
 
-/* .companyName {
-font-size: 80px;
-color: crimson;
-} */
-
-/* ====================================== Milestone 4 ====================================== */
-
 .wrapper {
   position: relative;
   overflow: hidden;
@@ -77,7 +66,7 @@ color: crimson;
   padding-left:10px;
 }
 
-/* ========================================================================================= */
+
 
 
 
